@@ -1,0 +1,178 @@
+JAVA BASICS
+Java – Object Oriented Programming Language
+OOPS Concepts:
+•	Class
+•	Object
+•	Polymorphism
+•	Abstraction
+•	Encapsulation
+•	Inheritance
+Features: 
+•	Platform Independent – Can install in any platforms (Windows, Linux)
+•	Case Sensitive
+Components:
+•	JDK - Java Development Kit (Java software- we must install JDK to use java in the system)
+•	JRE - Java Runtime Environment (no need to install, get installed by default, if we install jdk- provides run time env to run the Java code) 
+•	JVM - Java Virtual Machine (Part of JRE, Convert Human Language to byte code)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+STEPS TO DOWNLOAD AND INSTALL JAVA 
+----------------------------------
+1.Go to Oracle official website (Java Downloads | Oracle)
+2.Search for Java 11 version Download (jdk file)
+3.Download exe file (based on the OS)
+4.Click on the exe downloaded file and install it 
+5.Go to edit environment variables in the system
+6.Click on New in System Variables (give ->Variable Name: JAVA_HOME, Variable Value: Path jdk file installed, eg: C:\Program Files\Java\jdk-11)
+7.Click on Path in system variables, click on edit->New->add this -> %JAVA_HOME%\bin
+8.In cmd, type java -version to verify the java installation
+9.Downlod eclipse latest version (Eclipse IDE for Java developers)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+To create new project
+File->New->Java Project
+Right click src->New->Package/class
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Eclipse to Git:
+Pre-requisites: Create a repository in Github
+1.Go To Eclipse, Search for Git Repository (open perspective), on click git repo will open in left corner bottom
+2.Click on Clone repo by using the url
+3.Select clone URI and give url for the repo (make sure its public, if its private you’ll have to give access token everytime-access token you can get it from Settings->Developer Settings->Personal access token(classic)->tokens(classic)->Generate token)
+4.If you want to create new branch in local, right click on the repo->switchto->New branch->Select the main branch->new branch name->finish
+5.To push->Select the code(project)->right click->team->shareproject->Commit
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Eclipse Shortcuts:
+•	ctrl +: To increase font size 
+•	ctrl F11: To run the java code
+•	Type Syso then ctrl Space: to write System.out.println
+•	To generate setters and getters (FOR ENCAPSULATION ) method automatically in eclipse define private variables and then click on source ->Generate getters and setters->Select all->Generate
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Naming conventions in Java and Java MUST’S:
+•	Class name should always start with Uppercase characters
+•	No space is allowed in class name
+•	Class Name should not start with Number
+•	Class Name can contain underscore, Numbers
+•	Class Name should not contain Hyphen or special characters or spaces
+•	“Always print same as in:” within the double quotes will consider this is as a string
+•	Main method should always present inside the class
+•	
+Syntax: Reserved Keywords
+•	public static void main (String args[])
+•	System.out.println(“…”);
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Data Types in Java: Java is Statically typed language (reason: Can’t change the data type of the declared value)
+•	Primitive -Can store only one value at a time in a variable
+1.	Byte (1) short (2), int (4), long (8) ->To store whole number (without decimal)
+2.	Float (4), double (8) ->To store decimal number
+3.	Char (2)->To store single character
+4.	Boolean (1)->To store True/false
+
+•	Non-Primitive/Derived/Collections – To store multiple value in a single variable
+1.	String
+2.	Array List
+3.	HashMap
+4.	HashSet etc.
+Variables
+•	Number: int
+•	Words/Sentence: String
+•	Decimals: float
+•	Letters: char
+NOTE: For float and long we should always add literal at the end of the variable otherwise it’ll throw error eg: float f =93.45f; long l=124234657L; (Capital or small letter should be added)
+Operators
+•	Arithmetic (+, - , * , / , %)
+•	Relational/Comparison (>, >=, <, <=, != ,==)
+•	Logical (&&, ||, !)
+•	Increment and decrement (++, --)
+•	Assignment (=,+=,-+,*=,/=,%=)
+•	Conditional/ternary (?:) => (Syntax- Var= Expected? Value 1: Value 2)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Looping/iterative statements
+•	While loop
+•	Do while loop
+•	For loop
+•	Enhanced for loop/for while loop
+Jumping Statements
+•	Break – will break the loop
+•	Continue – will skip the current iteration and continue
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Arrays:
+Array is a collection of values of same data (Homogeneous) type. int [] a;, String[] arr;
+Types of arrays:
+•	Single dimensional
+•	Two/multi-dimensional
+
+To find the length of tha array:
+(Arrayname.length);
+To store heterotype data in array, use object array:
+Eg: Object a[] = {1,3,6, ‘,g’, “hello”};
+//Easy way to print array without loop: -> System.out.println(Arrays.toString(arrayname));
+//To sort -> Arrays.sort(arrayname);
+//To remove space in left and right of string -> System.out.println(Stringname.trim());
+//return character at given index-> System.out.println(Stringname.charAt(5));
+//convert string into character array-? to.CharArray();
+
+•	For String- concat method ->immutable
+•	For string buffer and builder –> append method -mutable
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+class- collection of attribute(variables) and behavior(methods)
+Class is a logical entity (Not a physical entity- wont occupy any  space in memory)
+               
+=================================================================================            
+
+Object- Instance of a class, without class- we can’t create object, object is a physical entity,
+Syntax: className variable name = new className();
+Key notes to remember:
+•	We can create objects only in the main, can’t create any other method
+•	We can’t create methods inside the method (even inside the main method; we can’t create another method) 
+•	Constructor can’t return any values and constructor name should be same as class name, we use constructor only for initialization, automatically called when object is created.
+•	 Inside a constructor, you can initialize instance variables, print messages, call other methods, handle exceptions, and invoke other constructors (constructor chaining). The primary goal of the constructor is to set up the object, but it can also carry out some additional logic or interactions
+
+=================================================================================            
+                 
+Methods – Block or grp of statements which will perform certain task, call the method through object
+ Whenever we define method, we must mention that return type (int, String) or no return type(void)
+•	No parameter with no return type
+•	No parameter with return type
+•	Parameter with no return type
+•	Parameter with return type
+
+=================================================================================            
+
+Constructor types:
+•	Default constructor
+•	Parameterized constructor (with parameters)
+
+=================================================================================            
+
+
+Polymorphism – One thing can have many forms
+•	Method overloading – One class have many methods with same name with different set of parameters (we can have diff return types also, doesn’t impact)
+•	Constructor overloading – same as method overloading, we must create constructor with diff set of parameters and create object based on that
+INTREVIEW QUESTION: Can we overload main method? YES WE CAN CREATE MULTIPLE METHODSS WITH NAME MAIN, WE ONLY CONSIDER PARAMETRE DIFFERENCE IN OVERLOADING
+•	Method overriding
+
+=================================================================================
+
+Encapsulation – Wrapping data and methods in single class, can’t be visible to outside of the class 
+•	we can’t directly access the variables of the encapsulated class using object like we usually do, 
+•	Instead, we can access only methods of the encapsulated class using object and that method will access variables of the encapsulated class, 
+•	we must create private variables (Class Variable) in encapsulated class
+•	we must have 2 methods for each private variable (setters and getters method), one is to set the value and other is get the value – (Secured feature) – 
+ECLIPSE SHORTCUT : to generate setters and getters method automatically in eclipse define private variables and then click on source ->Generate getters and setters->Select all->Generate
+•	we can use this keyword to access class variables (private variables in the encapsulated class)
+
+=================================================================================
