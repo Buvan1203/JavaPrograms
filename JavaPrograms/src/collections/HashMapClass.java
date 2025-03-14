@@ -44,14 +44,21 @@ public class HashMapClass {
 			System.out.println(k+" "+hm.get(k));//using key to retrive value
 		}
 		
+		System.out.println("using iterator");
 		//using Iterator
 		Iterator <Entry<Integer, String>>  it= hm.entrySet().iterator();
 		
 		while(it.hasNext())
 		{
-			System.out.println(it.next());//will return entry set, so both value and key will be printed
+			//System.out.println(it.next());//will return entry set, so both value and key will be printed
+		
+			Entry<Integer, String> entry=it.next();
+			System.out.println(entry.getKey()+" "+entry.getValue());
 		}
-	
+		
+		//to clear
+		hm.clear();
+		System.out.println(hm.isEmpty());
 	}
 
 }
