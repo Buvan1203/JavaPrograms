@@ -3,10 +3,10 @@ Java – Object Oriented Programming Language
 OOPS Concepts:
 •	Class
 •	Object
-•	Polymorphism
-•	Abstraction
-•	Encapsulation
-•	Inheritance
+•	Polymorphism ->overloading
+•	Abstraction ->interface (multiple inheritance) , data abstraction
+•	Encapsulation->setters &getters
+•	Inheritance->>overriding
 Features: 
 •	Platform Independent – Can install in any platforms (Windows, Linux)
 •	Case Sensitive
@@ -14,10 +14,9 @@ Components:
 •	JDK - Java Development Kit (Java software- we must install JDK to use java in the system)
 •	JRE - Java Runtime Environment (no need to install, get installed by default, if we install jdk- provides run time env to run the Java code) 
 •	JVM - Java Virtual Machine (Part of JRE, Convert Human Language to byte code)
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+======================================================================================================================================================================================
 STEPS TO DOWNLOAD AND INSTALL JAVA 
-----------------------------------
 1.Go to Oracle official website (Java Downloads | Oracle)
 2.Search for Java 11 version Download (jdk file)
 3.Download exe file (based on the OS)
@@ -28,12 +27,11 @@ STEPS TO DOWNLOAD AND INSTALL JAVA
 8.In cmd, type java -version to verify the java installation
 9.Downlod eclipse latest version (Eclipse IDE for Java developers)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================================================================================
+
 To create new project
 File->New->Java Project
 Right click src->New->Package/class
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Eclipse to Git:
 Pre-requisites: Create a repository in Github
 1.Go To Eclipse, Search for Git Repository (open perspective), on click git repo will open in left corner bottom
@@ -42,15 +40,17 @@ Pre-requisites: Create a repository in Github
 4.If you want to create new branch in local, right click on the repo->switchto->New branch->Select the main branch->new branch name->finish
 5.To push->Select the code(project)->right click->team->shareproject->Commit
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+======================================================================================================================================================================================
 
 Eclipse Shortcuts:
 •	ctrl +: To increase font size 
 •	ctrl F11: To run the java code
 •	Type Syso then ctrl Space: to write System.out.println
-•	To generate setters and getters (FOR ENCAPSULATION ) method automatically in eclipse define private variables and then click on source ->Generate getters and setters->Select all->Generate
+•	to generate setters and getters (FOR ENCAPSULATION ) method automatically in eclipse define private variables and then click on source ->Generate getters and setters->Select all->Generate
+•	
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================================================================================
 
 Naming conventions in Java and Java MUST’S:
 •	Class name should always start with Uppercase characters
@@ -64,10 +64,6 @@ Naming conventions in Java and Java MUST’S:
 Syntax: Reserved Keywords
 •	public static void main (String args[])
 •	System.out.println(“…”);
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Data Types in Java: Java is Statically typed language (reason: Can’t change the data type of the declared value)
 •	Primitive -Can store only one value at a time in a variable
 1.	Byte (1) short (2), int (4), long (8) ->To store whole number (without decimal)
@@ -93,9 +89,6 @@ Operators
 •	Increment and decrement (++, --)
 •	Assignment (=,+=,-+,*=,/=,%=)
 •	Conditional/ternary (?:) => (Syntax- Var= Expected? Value 1: Value 2)
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 Looping/iterative statements
 •	While loop
 •	Do while loop
@@ -105,7 +98,7 @@ Jumping Statements
 •	Break – will break the loop
 •	Continue – will skip the current iteration and continue
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+======================================================================================================================================================================================
 
 Arrays:
 Array is a collection of values of same data (Homogeneous) type. int [] a;, String[] arr;
@@ -125,14 +118,8 @@ Eg: Object a[] = {1,3,6, ‘,g’, “hello”};
 
 •	For String- concat method ->immutable
 •	For string buffer and builder –> append method -mutable
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-class- collection of attribute(variables) and behavior(methods)
-Class is a logical entity (Not a physical entity- wont occupy any  space in memory)
-               
-=================================================================================            
-
+-----------------------------------------------------------------------------------------------------------------------------class- collection of attribute(variables) and behavior(methods)
+Class is a logical entity (Not a physical entity- wont occupy any space in memory) only one class should be public(which contains main method)
 Object- Instance of a class, without class- we can’t create object, object is a physical entity,
 Syntax: className variable name = new className();
 Key notes to remember:
@@ -140,33 +127,23 @@ Key notes to remember:
 •	We can’t create methods inside the method (even inside the main method; we can’t create another method) 
 •	Constructor can’t return any values and constructor name should be same as class name, we use constructor only for initialization, automatically called when object is created.
 •	 Inside a constructor, you can initialize instance variables, print messages, call other methods, handle exceptions, and invoke other constructors (constructor chaining). The primary goal of the constructor is to set up the object, but it can also carry out some additional logic or interactions
-
-=================================================================================            
-                 
 Methods – Block or grp of statements which will perform certain task, call the method through object
  Whenever we define method, we must mention that return type (int, String) or no return type(void)
 •	No parameter with no return type
 •	No parameter with return type
 •	Parameter with no return type
 •	Parameter with return type
-
-=================================================================================            
-
 Constructor types:
 •	Default constructor
 •	Parameterized constructor (with parameters)
 
-=================================================================================            
+======================================================================================================================================================================================
 
 
 Polymorphism – One thing can have many forms
 •	Method overloading – One class have many methods with same name with different set of parameters (we can have diff return types also, doesn’t impact)
 •	Constructor overloading – same as method overloading, we must create constructor with diff set of parameters and create object based on that
 INTREVIEW QUESTION: Can we overload main method? YES WE CAN CREATE MULTIPLE METHODSS WITH NAME MAIN, WE ONLY CONSIDER PARAMETRE DIFFERENCE IN OVERLOADING
-•	Method overriding
-
-=================================================================================
-
 Encapsulation – Wrapping data and methods in single class, can’t be visible to outside of the class 
 •	we can’t directly access the variables of the encapsulated class using object like we usually do, 
 •	Instead, we can access only methods of the encapsulated class using object and that method will access variables of the encapsulated class, 
@@ -175,4 +152,206 @@ Encapsulation – Wrapping data and methods in single class, can’t be visible 
 ECLIPSE SHORTCUT : to generate setters and getters method automatically in eclipse define private variables and then click on source ->Generate getters and setters->Select all->Generate
 •	we can use this keyword to access class variables (private variables in the encapsulated class)
 
-=================================================================================
+
+======================================================================================================================================================================================
+
+
+Variables-
+Java doesn’t support global variables; we can’t create variable outside class
+Class Variables/Instance variables- variables that can be accessible within the class
+Local variables- Variables that can be accessible within the declared method only
+Keywords:
+This- we use this keyword to differentiate between class variables and local variables, when we use this keyword before the variables that means that variable is class variable
+Static – can use in both methods and variables
+Static methods and variables can be directly accessible without objects and we can change override those variables and methods
+Main is also a static method, and we can access non static method and variables using objects
+Non static method has no restriction, we can access static/non static methods and variables (eg: regular method outside the main method)
+access static variable of another class is also possible without objects. For that,  we have to use classname (anotherclassname.variable)
+INTREVIEW QUESTIONS example for static : (System.out.println->System is a predefined class, prtintstream(contains an static out variable and println is a static method) )
+
+======================================================================================================================================================================================
+
+Inheritance: Acquiring all the properties (Variables) and behavior(methods) from one class to another class is called inheritance using extends keyword
+•	Parent class also called super class
+•	Child class also called derived/Sub class
+Advantage: reusability, to avoid duplication
+Types:
+•	Single – one parent one child
+•	Multi-level - one parent one child chain
+•	Hierarchy – one parent has multiple child
+•	Multiple – multiple parents with single child (Class concepts doesn’t support multiple inheritance, we achieve this using interface only)
+Java doesn’t support multiple inheritance  WHY??? Extends keyword can support with one class only, ambiguity issues(more than one duplicate methods) and also all classes
+
+Method overriding – same class in both parent and child class, DECLARATION RETURN TYPE SHOULD BE SAME , only body should be different for these methods, and overriding is possible only with inheritance – because both methods declaration should be in parent and child
+Method overloading doesn’t need inheritance
+Difference between method overloading and overriding
+Method overloading
+•	Possible in single and multiple class(inheritance)
+•	Method names are same but we should change the signature of the method
+•	Belongs to polymorphism
+Method overriding
+•	Possible only in multiple class(inheritance) - because we need both parent and child
+•	Method names are same, but we should NOT change the signature of the method
+•	Belongs to Inheritance
+
+======================================================================================================================================================================================
+
+FINAL Keyword – 
+•	Final variable- we can’t change the value of the final variable, it is constant
+•	Final method- if we create a method as final, we cannot (inherit) extend into another class we can’t override or overload, can’t change it
+•	Final class- we cannot extend the class
+Super Keyword- (related to inheritance) NOT applicable to interface due to multiple parents
+Super keyword always represents immediate parents’ variables or methods
+When to use- Scenario – overloaded method presents in both child and parent class. if you call the method using child class object but want to print the parent method, then we’ll use super keyword
+
+======================================================================================================================================================================================
+
+Data Abstraction
+Process of hiding the implementation only showing functionality to the user, can’t directly access variables methods
+To achieve abstraction
+•	Abstract class
+•	Interface (100% abstraction can be achieved only using interface)
+INTERFACE
+•	Interface is a blueprint of class (like class – we must have interface keyword; interface can also have methods and variables)
+•	Interface contains only final and static variables (by default it will be static or final)
+•	Interface contains abstract methods with no implementation (default method and static method with implementation after java 8)
+•	Abstract methods have no body only declaration
+•	All methods in interface are by default public (even though you didn’t specify explicitly)
+•	Interface supports multiple inheritance
+•	Keyword- A class extends another class, an interface extends another interface, but class implements interface (reason: interface contains abstract methods i.e., method with declaration only no implementation, to implement that we need a class, that’s why we are using implement keyword ->class implements interface) 
+•	class to interface is not possible because interface doesn’t allow any implementation
+•	Interface with class is useful, without class we can’t implement interface
+•	We can create objects reference, but we cannot instantiate (object reference = new class name) that new class name is an object instantiate
+•	Reason -> when we implement interface using class, the class will implement everything, that’s why we create an object for class with interface object interface 
+•	Interface obj = new classname();  ->Interface variable will hold the object of child class
+•	All abstract methods in interface should be implemented in the class. Otherwise we’ll get an error
+•	We can only access default methods and abstract methods using interface object reference
+•	To access static methods inside interface we’ll have to use interfacename.method name (similar to class)
+MULTIPLE INHERITANCE: 
+•	We can achieve, multiple inheritance using interface i.e, multiple interface (many parents) implements by single class (child)
+•	We can implement 2 interface in a single class
+HYBRID INHERITANCE:
+PARENT CLASS -> 2 INTERFACE CHILD -> SINGLE GRANCHILD CLASS
+Eg: public class class1 extends class2 implements Interface1, interface2
+ 
+-----------------------------------------------------------------------------------------------------------------------------
+WRAPPER CLASS
+•	For every primitive data type, there will be wrapper class, (string is not wrapper class because its not a primitive type) 
+•	WRAPPER CLASS USED IN collections 
+•	We use this wrapper class when we want to convert data type one to another
+•	We convert only in 2 format (String to primitive or primitive to String)
+•	Int->Integer
+•	Float-> Float
+•	double->Double
+•	Char->Character
+•	Boolean->Boolean
+Possible:
+String->Int => Interger.paresInt(String value)
+String->Double=> Double.paresDouble(String value)
+String->Boolean => Boolean.parseBoolean(String Value)
+String ->Char – NOT POSSIBLE (we can’t convert multiple characters into single characters, BUT CHARACTER TO STRING IS POSSIBLE)
+Primitive to String -> String.valueOf(int)
+======================================================================================================================================================================================
+
+PACKAGES:
+Builtin packages – that we have to import in class whenever we use
+User defined packages- we create
+Access Modifiers – defines the scope of accessibility of methods and variables
+•	Public- accessible everywhere
+•	Protected- accessible outside package also, through inheritance only
+•	Default – if there is no modifier, it will be treated as default-can access within the package
+•	Private – accessible within the class
+
+======================================================================================================================================================================================
+
+EXCEPTIONS: All exceptions are predefined class in java
+Exception is an event which will cause termination of program due to invalid input from the user, so we must handle that in our code
+Types of exceptions:
+•	Checked exception – identified by java compiler (e.g.: interuptedexception, FileNotFoundException,IOException)
+•	Unchecked exception – we have to handle this (eg:Arithmetic Exception, NullPointerException, ArrayIndexOutofBoundsExcpetion )
+Unchecked-  That’s why we use try and catch block- whatever the exception it will throw, you have to mention that exception name in catch block
+If we don’t know the name of the exception, we can have multiple catch blocks, we have many catch blocks for one try block
+Or we could use Exception e, that will handle the exception
+•	Try – statement that needs to be run
+•	Catch – to handle the exception we must mention it and we could get message
+•	Finally- finally block will always execute with or without exception
+CHECKED – WE CAN USE TRY AND CATCH or throw
+ Or We can also handle CHECKED exception in method level also using throw keyword
+ ======================================================================================================================================================================================
+ 
+TYPE CASTING – Converting type of data
+TWO TYPES:
+•	Upcasting/widening – it is a automatic process , Converting smaller values to higher values
+•	Down casting/narrowing- Converting higher values to smaller values, sometimes we may lose day if we follow the same method as upcasting, that’s why we have to manually add it by reducing the size first then
+We can use it for objects and primitive data types 
+Important: Object upcasting
+Parent class reference can use child class’s object
+Parent p = new Child ();
+Eg:  Child ch = (Child) p; in this case, the child and p mmust have some relationship (either parent to child or child to parent) otherwise it is invalid
+
+
+======================================================================================================================================================================================
+
+COLLECTIONS – it is a predefined root interface of all the collections and it is extended into 2 more interface – list and Set
+•	List interface is implemented by Array List class
+•	Set interface is implemented by HashSet class
+Collection only store object type of data We can’t store primitive data types in collections. If we want to store number in collection, we have to use wrapper class (Since string is not a primitive but a class, we can store it)
+Collection available in java.util package
+ARRAYLIST:
+•	Array list is also called dynamic array, no need to specify size
+•	Arraylist allows heterogenious (different data types)
+•	Insertion order is preserved(index)
+•	Duplicate elements are allowed
+•	Multiple nulls are allowed
+
+	ArrayList mylist=new ArrayList();//valid : child class with child reference
+	List mylist1 = new ArrayList();//Valid: Parent interface refernce with child class object
+	ArrayList<Integer> mylist2=new ArrayList<Integer>();  //Since arraylist supports heterogenous and we only want to use homogeneous like numbers only we have to use this format, can use for string also
+	ArrayList class have some predefined methods
+•	Objectname.add(); //To add/store the data into array list
+•	Objectname.add(index, value); //to insert element 
+•	Objectname.size(); //To find the size of the ArrayList
+•	Objectname.remove(index); //To remove an value from arraylist using index
+•	Objectname.set(index, value); //to replace/modify 
+•	Objectname.get (index);//to access specific element
+	For..each enhanced loop , we have to use object since it stores heterogeneous(eg: for(Object j:mylist){})
+	Iterator- method already available in the list, specific to collections only. this iterator method will return iterator type of object that why we stores in iterator object reference
+	Using iterator object will check, if the element is present or not using hasNext() and will print using next() in the while loop
+	Iterator method type is iterator that’s why whenever we call iterator method we’ll store the value in iterator variable (Iterator it=mylist.iterator)
+	If my list has homogeneous data- Iterator <Interger> it = mylist.iterator
+	If my list has heterogeneous data- Iterator <Object > it = mylist.iterator
+
+======================================================================================================================================================================================
+
+HASHSET:
+•	Hashset allows heterogenious (different data types)
+•	No Insertion order is preserved(no index)
+•	Duplicate elements are NOT allowed, duplicates will automatically gets removed if any added
+•	Multiple nulls are NOT allowed/ only single nulls are allowed
+•	Insertion is not possible, since it has no index/order
+•	Accessing specific element is not possible since no index
+•	If we convert the set collection to arraylist collection, we can access the elements
+•	We can use only enhanced for loop, cannot use normal for loop since we move by index in for loop
+•	Set doesn’t have get method sice no index
+
+======================================================================================================================================================================================
+
+MAP – Not related to set or list, it is independent interface
+HASHMAP- 
+•	It is a class implements Map interface and it stores value in a Set of key and values (pair) and key should be unique
+•	Insertion order not preserved since it has no index
+•	HashMap doesn’t have add function, instead we use put()
+•	To remove- we can hashmapname.remove(key);
+•	To access all keys -> hashmapname.keySet();
+•	To access all values-> hashmapname.values ();
+•	To access both keys and values -> hashmapname.entrySet();
+•	Map also doesn’t support regular for loop since it has no index
+•	We have to use enhanced for loop by accessing values using key
+•	If we use iterator we’ll have to call both values and keys using entrySet: and return type for entry set is Iterator <Entry<Integer, String>>  
+                 Syntax: Iterator <Entry<Integer, String>>  it= hm.entrySet().iterator();
+
+======================================================================================================================================================================================
+
+
+
+

@@ -62,3 +62,18 @@ public class HashMapClass {
 	}
 
 }
+
+/*MAP – Not related to set or list, it is independent interface
+HASHMAP- 
+•	It is a class implements Map interface and it stores value in a Set of key and values (pair) and key should be unique
+•	Insertion order not preserved since it has no index
+•	HashMap doesn’t have add function, instead we use put()
+•	To remove- we can hashmapname.remove(key);
+•	To access all keys -> hashmapname.keySet();
+•	To access all values-> hashmapname.values ();
+•	To access both keys and values -> hashmapname.entrySet();
+•	Map also doesn’t support regular for loop since it has no index
+•	We have to use enhanced for loop by accessing values using key
+•	If we use iterator we’ll have to call both values and keys using entrySet: and return type for entry set is Iterator <Entry<Integer, String>>  
+                 Syntax: Iterator <Entry<Integer, String>>  it= hm.entrySet().iterator();
+*/
